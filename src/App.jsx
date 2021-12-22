@@ -3,7 +3,6 @@ import './styles/App.css';
 import { ethers } from "ethers";
 import irodoriNft from './utils/irodoriNFT.json';
 
-const OPENSEA_LINK = '';
 const CONTRACT_ADDRESS = "0x0fa7FBE206AE4556a1Ff7D88Da049f973812a559";
 
 const App = () => {
@@ -43,9 +42,6 @@ const App = () => {
     }
   }
 
-  /*
-  * Implement your connectWallet method here
-  */
   const connectWallet = async () => {
     try {
       const { ethereum } = window;
@@ -54,18 +50,12 @@ const App = () => {
         alert("Get MetaMask!");
         return;
       }
-
-      /*
-      * Fancy method to request access to account.
-      */
       const accounts = await ethereum.request({ method: "eth_requestAccounts" });
 
-      /*
-      * Boom! This should print out public address once we authorize Metamask.
-      */
       console.log("Connected", accounts[0]);
       setCurrentAccount(accounts[0]); 
       setupEventListener() 
+
     } catch (error) {
       console.log(error)
     }
@@ -121,7 +111,7 @@ const App = () => {
   }
 }
 
-  // Render Methods
+  // render if wallet is not connected
   const renderNotConnectedContainer = () => (
     <button onClick={connectWallet} className="cta-button connect-wallet-button">
       Connect to Wallet
@@ -145,13 +135,11 @@ const App = () => {
     askContractToMintNft(baseFrequency, numOct, seed);
   }
 
+  // if wallet is already connected
   useEffect(() => {
     checkIfWalletIsConnected();
   }, [])
 
-  /*
-  * Added a conditional render! We don't want to show Connect to Wallet if we're already conencted :).
-  */
   return (
     <div className="App">
       <div className="container">
