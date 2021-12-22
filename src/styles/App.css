@@ -52,13 +52,15 @@
   background: -webkit-linear-gradient(left, #da01bd 30%, #e2c835 60%);
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
+  margin-bottom: 50px;
 }
 
 .mint-button {
-  background: -webkit-linear-gradient(left, #a200d6, #ff6fdf);
+  background-color: #e2c835;
   background-size: 200% 200%;
   animation: gradient-animation 4s ease infinite;
   margin-right: 15px;
+  margin-bottom: 50px;
 }
 
 .opensea-button {
@@ -76,11 +78,6 @@
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
-}
-
-.twitter-logo {
-  width: 35px;
-  height: 35px;
 }
 
 .footer-text {
@@ -102,14 +99,6 @@ textarea {
   font-weight: bold;
   margin-top: 0px;
   margin-bottom: 30px;
-}
-
-.submit-button {
-  background: -webkit-linear-gradient(left, #da01bd 30%, #e2c835 60%);
-  background-size: 200% 200%;
-  animation: gradient-animation 4s ease infinite;
-  margin-right: 15px;
-  margin-top: 30px;
 }
 
 /* KeyFrames */
